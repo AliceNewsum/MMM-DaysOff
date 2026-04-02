@@ -1,0 +1,23 @@
+.daysoff-wrapper {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.daysoff-header {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.daysoff-empty {
+    font-size: 16px;
+    color: #888;
+}
+
+.daysoff-tag {
+    color: #aaa;
+}
+
+.daysoff-row {
+    white-space: nowrap;
+}
