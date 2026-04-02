@@ -4,7 +4,7 @@ A [MagicMirror²](https://magicmirror.builders/) module that parses a Google Cal
 
 Unlike the built-in calendar module, MMM-DaysOff performs tag-based parsing so you can track days off for specific people from a single shared calendar.
 
-![Screenshot placeholder](screenshot.png)
+![Screenshot](screenshot.jpg)
 
 ## Installation
 
@@ -54,6 +54,23 @@ Add the following to the `modules` array in your `config/config.js` file:
 
 ## How It Works
 
+### The Tag System
+
+Tags represent people's first initials. By tagging calendar events, you can see at a glance which days off are shared and which aren't — useful for planning around each other's schedules.
+
+For example, in a household with **A**lice and **M**att:
+- `[A] Doctor appointment` — only Alice is off
+- `[M] Conference` — only Matt is off
+- `[A&M] Christmas Day` — both are off
+
+This makes it easy to spot:
+- **Common days off** (`[A&M]`) — great for planning trips or family time
+- **Solo days off** (`[A]` or `[M]`) — one person is home, the other isn't
+
+You can customize the tags to any initials or names that suit your household.
+
+### Processing
+
 1. The module fetches the iCal feed from the configured URL at the configured interval.
 2. It parses each `VEVENT` block and looks for a tag at the start of the `SUMMARY` field matching the pattern `[TAG]` (e.g. `[A] Holiday`, `[M] Sick day`, `[A&M] Bank holiday`).
 3. Only future events with a matching tag are kept.
@@ -62,7 +79,7 @@ Add the following to the `modules` array in your `config/config.js` file:
 ### Setting Up Your Google Calendar
 
 1. Create a Google Calendar (or use an existing one) for tracking days off.
-2. Add events with a tag prefix in the title, for example: `[A] Annual leave` or `[M] Doctor appointment`.
+2. Add events with a tag prefix in the title using people's initials, for example: `[A] Annual leave`, `[M] Doctor appointment`, or `[A&M] Thanksgiving`.
 3. Go to the calendar's settings, scroll to "Integrate calendar", and copy the "Secret address in iCal format" URL.
 4. Paste that URL as the `icalUrl` value in your module config.
 
