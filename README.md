@@ -58,10 +58,10 @@ Add the following to the `modules` array in your `config/config.js` file:
 
 Tags represent people's first initials. By tagging calendar events, you can see at a glance which days off are shared and which aren't — useful for planning around each other's schedules.
 
-For example, in a household with **A**lice and **M**att:
+For example, in a household with **A**lice and **M**anda:
 - `[A] Doctor appointment` — only Alice is off
-- `[M] Conference` — only Matt is off
-- `[A&M] Christmas Day` — both are off
+- `[M] Conference` — only Manda is off
+- `[A&M] Christmas Day` — both Alice and Manda are off
 
 This makes it easy to spot:
 - **Common days off** (`[A&M]`) — great for planning trips or family time
